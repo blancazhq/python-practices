@@ -1,3 +1,5 @@
+#Given the following code that prompts the user for a day number
+
 day = int(raw_input("Day(0-6?)"))
 
 if day == 0:

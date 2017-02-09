@@ -1,3 +1,5 @@
+#a hangman game that only works for the core of the name
+
 import os
 
 wrong_counter = 0

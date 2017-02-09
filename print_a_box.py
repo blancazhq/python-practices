@@ -1,3 +1,5 @@
+#Given a height and width, input by the user, print a box consisting of * characters as its border. 
+
 m = int(raw_input("Width?"))
 n = int(raw_input("Height?"))
 

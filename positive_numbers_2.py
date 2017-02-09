@@ -1,3 +1,5 @@
+#Given an list of numbers, print each number in the list that is greater than zero.
+
 list = [2, -9, 3, 4, 5]
 
 new_list = []

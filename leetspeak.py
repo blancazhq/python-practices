@@ -1,9 +1,11 @@
+#Given a paragraph of text as a string, print the paragraph in leetspeak. To translate a string to leetspeak, you need to replace make the following character replacements (treat all input characters as uppercase)
+# you can also use string.replace(old, new) method
+
 string_input = raw_input("what's the string?")
 
 string = string_input.upper()
 
 string_to_list = list(string)
-
 
 length = len(string_to_list)
 
@@ -22,8 +24,6 @@ for i in range (0, length):
         string_to_list[i] = "5"
     if string_to_list[i] == "T":
         string_to_list[i] = "7"
-
-# string.replace(a, b)
 
 new_string = "".join(string_to_list)
 

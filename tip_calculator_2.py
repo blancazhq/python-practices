@@ -1,3 +1,5 @@
+#Allow the ability to divide the check into a equal parts amount a number of people. The user will enter the number of people to be divided amongst.
+
 bill = float(raw_input("Total bill amount?"))
 service = raw_input("Level of service?")
 people = int(raw_input("Split how many ways?"))

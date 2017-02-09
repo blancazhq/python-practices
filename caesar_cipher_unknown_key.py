@@ -1,3 +1,7 @@
+#Given a string, print the Caesar Cipher (or ROT13) of that string.
+#Use your solution to decipher the following text: "lbh zhfg hayrnea jung lbh unir yrnearq"
+#if you don't know the key, just try all possiblities.
+
 string_input = raw_input("what's the string?")
 
 string = string_input.lower()

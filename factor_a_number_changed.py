@@ -1,3 +1,6 @@
+#Given a number, print its factors.
+#it only has to loop through 1 to the square root of the number given, it occupies much less memories.
+
 import math
 
 n = int(raw_input("what's the number?"))
@@ -13,4 +16,3 @@ for i in range(1, math.sqrt(n)):
             print big_brother
 
 print "1"
- 

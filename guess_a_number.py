@@ -1,3 +1,6 @@
+#You will implement a guess-the-number game where the player has to try guessing a secret number until he gets it right.
+#it has a function and a global while loop
+
 import random
 
 play_again = "Y"

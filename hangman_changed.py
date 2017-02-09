@@ -1,3 +1,7 @@
+#a hangman game that is raletively complete
+#the function that I realized there are:
+#check "not valid" input/repeat guess check/play again/word_bank/category search/blur search
+
 import random
 
 def draw_rack():

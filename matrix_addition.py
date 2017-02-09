@@ -1,3 +1,7 @@
+#Given two two-dimensional lists of numbers of the size 2x2 two dimensional list is represented as an list of lists,
+#Calculate the result of adding the two matrices. The number in each position in the resulting matrix should be the sum of the numbers in the corresponding addend matrices.
+#You don't have to use "(list1[0])[0]", you can use "list1[0][0]"
+
 list1 = [[1, 3], [2, 4]]
 list2 = [[5, 2], [1, 0]]
 

@@ -1,3 +1,6 @@
+#Use your solution in Matrix Addition, and extend it to work for a pair of matrices of any size, as long as they have the same size.
+#this is not a solution for matrix of any size. I guess the solution is similar to the matrix multiplication
+
 list1 = [[1, 3, 4], [2, 4, 8],[1, 2, 3]]
 list2 = [[5, 2, 6], [1, 0, 9],[1, 2, 3]]
 

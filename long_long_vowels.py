@@ -1,3 +1,7 @@
+#Given a word as a string, print the result of extending any long vowels to the length of 5.
+#you don't have to use the insert() method, you can use replace() method
+#Or you can store each letter in a temporary variable(x) when you loop through each letter, and use "x += 'eeee'" 
+
 string_input = raw_input("what's the string?")
 
 string = string_input.lower()
