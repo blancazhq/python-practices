@@ -62,11 +62,7 @@ def playagain ():
 
 
 location = "--- --- ---\n 1 | 2 | 3\n--- --- ---\n 4 | 5 | 6\n--- --- ---\n 7 | 8 | 9\n--- --- ---\n"
-round_counter = 0
-win_win_checker_handler = False
-game_record = location
 play_again_handler = True
-runner = True
 
 def game():
     global location
