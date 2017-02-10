@@ -12,9 +12,9 @@ def win_checker():
     if game_data[0] == game_data[1] ==  game_data[2] or game_data[3] == game_data[4] ==  game_data[5] or game_data[6] == game_data[7] ==  game_data[8] or game_data[0] == game_data[3] ==  game_data[6] or game_data[1] == game_data[4] ==  game_data[7] or game_data[2] == game_data[5] ==  game_data[8] or game_data[0] == game_data[4] ==  game_data[8] or game_data[2] == game_data[4] ==  game_data[6]:
         win_checker_handler = True
         if game_data[0] == game_data[1] ==  game_data[2] == "x" or game_data[3] == game_data[4] == game_data[5] == "x" or game_data[6] == game_data[7] ==  game_data[8] == "x" or game_data[0] == game_data[3] ==  game_data[6]  == "x" or game_data[1] == game_data[4] ==  game_data[7]  == "x" or game_data[2] == game_data[5] ==  game_data[8] == "x" or game_data[0] == game_data[4] ==  game_data[8]  == "x"or game_data[2] == game_data[4] ==  game_data[6] == "x":
-            winner = player_a_name
-        else:
             winner = player_b_name
+        else:
+            winner = player_a_name
         print "The winner is " + winner + "! Congratulations!"
 
 def input_checker_a():
@@ -38,7 +38,7 @@ def input_checker_b():
     global game_record
 
     while True:
-        player_b_input = raw_input("\n"+player_b_name + ", what location do you want to draw an O?")
+        player_b_input = raw_input("\n"+player_b_name + ", what location do you want to draw an x?")
         if player_b_input not in game_record:
             print "\nThe position is already taken.\n"
             continue
