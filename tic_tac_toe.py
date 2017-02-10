@@ -1,8 +1,8 @@
-def checker():
+def win_checker():
     global game_record
     global player_a_name
     global player_b_name
-    global checker_handler
+    global win_checker_handler
 
     a = game_record.replace(" ", "")
     b = a.replace("-", "")
@@ -10,17 +10,48 @@ def checker():
     game_data = c.replace("|", "")
 
     if game_data[0] == game_data[1] ==  game_data[2] or game_data[3] == game_data[4] ==  game_data[5] or game_data[6] == game_data[7] ==  game_data[8] or game_data[0] == game_data[3] ==  game_data[6] or game_data[1] == game_data[4] ==  game_data[7] or game_data[2] == game_data[5] ==  game_data[8] or game_data[0] == game_data[4] ==  game_data[8] or game_data[2] == game_data[4] ==  game_data[6]:
-        checker_handler = True
+        win_checker_handler = True
         if game_data[0] == game_data[1] ==  game_data[2] == "x" or game_data[3] == game_data[4] == game_data[5] == "x" or game_data[6] == game_data[7] ==  game_data[8] == "x" or game_data[0] == game_data[3] ==  game_data[6]  == "x" or game_data[1] == game_data[4] ==  game_data[7]  == "x" or game_data[2] == game_data[5] ==  game_data[8] == "x" or game_data[0] == game_data[4] ==  game_data[8]  == "x"or game_data[2] == game_data[4] ==  game_data[6] == "x":
             winner = player_a_name
         else:
             winner = player_b_name
         print "The winner is " + winner + "! Congratulations!"
 
+def input_checker_a():
+    global player_a_input
+    global player_a_name
+    global game_record
+
+    while True:
+        player_a_input = raw_input("\n"+player_a_name + ", what location do you want to draw an O?")
+        if player_a_input not in game_record:
+            print "\nThe position is already taken.\n"
+            continue
+        elif player_a_input not in "123456789":
+            print "\nNot a number. Please put in a number\n"
+        else:
+            break
+
+def input_checker_b():
+    global player_b_input
+    global player_b_name
+    global game_record
+
+    while True:
+        player_b_input = raw_input("\n"+player_b_name + ", what location do you want to draw an O?")
+        if player_b_input not in game_record:
+            print "\nThe position is already taken.\n"
+            continue
+        elif player_b_input not in "123456789":
+            print "\nNot a number. Please put in a number\n"
+        else:
+            break
+
+
 def playagain ():
     global play_again_handler
     while True:
-        play_again = raw_input("Do you want to play again?(y or n)")
+        play_again = raw_input("\nDo you want to play again?(y or n)")
         if play_again == "n":
             play_again_handler = False
             break
@@ -32,7 +63,7 @@ def playagain ():
 
 location = "--- --- ---\n 1 | 2 | 3\n--- --- ---\n 4 | 5 | 6\n--- --- ---\n 7 | 8 | 9\n--- --- ---\n"
 round_counter = 0
-checker_handler = False
+win_win_checker_handler = False
 game_record = location
 play_again_handler = True
 runner = True
@@ -43,15 +74,19 @@ def game():
     global game_record
     global player_a_name
     global player_b_name
-    global checker_handler
+    global player_a_input
+    global player_b_input
+    global win_checker_handler
     global play_again_handler
     global runner
 
     round_counter = 0
-    checker_handler = False
+    win_checker_handler = False
     game_record = location
     play_again_handler = True
     runner = True
+    player_a_input = ""
+    player_b_input = ""
 
 
     print "\nTIC - TAC - TOE\n"
@@ -61,7 +96,7 @@ def game():
 
     print "\nwelcome, " + player_a_name + "!\n"
 
-    player_b_name = raw_input("what's your name?")
+    player_b_name = raw_input("what's the second player's name?")
 
     print "\nwelcome, " + player_b_name + "!\n"
 
@@ -71,39 +106,43 @@ def game():
 
 
         if runner == True:
-            player_a_input = raw_input(player_a_name + ", what location do you want to draw an O?")
+            input_checker_a()
             game_record = game_record.replace(player_a_input, "O")
             round_counter += 1
             print game_record
-            checker()
-            if checker_handler == True:
+            win_checker()
+            if win_checker_handler == True:
                 playagain()
                 runner = False
                 break
 
         if runner == True:
-            player_b_input = raw_input(player_b_name + ", what location do you want to draw an x?")
+            if round_counter >= 9:
+                print " \nNobody won. Game Over!"
+                playagain()
+                runner = False
+                break
+
+        if runner == True:
+            input_checker_b()
             game_record = game_record.replace(player_b_input, "x")
             round_counter += 1
             print game_record
-            checker()
-            if checker_handler == True:
+            win_checker()
+            if win_checker_handler == True:
                 playagain()
                 runner = False
                 break
 
 
         if runner == True:
-            if round_counter >= 8:
-                print " \nGame Over!"
+            if round_counter >= 9:
+                print " \nNobody won. Game Over!"
                 playagain()
                 runner = False
                 break
-            if checker_handler == True:
-                playagain()
-                runner = False
-                break
-            
+
+
 
 while True:
     if play_again_handler == True:
