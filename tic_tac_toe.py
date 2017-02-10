@@ -70,7 +70,7 @@ def game():
     while runner == True:
 
 
-        while runner == True:
+        if runner == True:
             player_a_input = raw_input(player_a_name + ", what location do you want to draw an O?")
             game_record = game_record.replace(player_a_input, "O")
             round_counter += 1
@@ -80,9 +80,8 @@ def game():
                 playagain()
                 runner = False
                 break
-            break
 
-        while runner == True:
+        if runner == True:
             player_b_input = raw_input(player_b_name + ", what location do you want to draw an x?")
             game_record = game_record.replace(player_b_input, "x")
             round_counter += 1
@@ -92,16 +91,19 @@ def game():
                 playagain()
                 runner = False
                 break
-            break
 
-        while runner == True:
-            if round_counter >= 9:
+
+        if runner == True:
+            if round_counter >= 8:
                 print " \nGame Over!"
+                playagain()
+                runner = False
+                break
             if checker_handler == True:
                 playagain()
                 runner = False
                 break
-            break
+            
 
 while True:
     if play_again_handler == True:
