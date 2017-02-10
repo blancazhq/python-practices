@@ -35,10 +35,8 @@ def generate():
 
         if input_message == "strong":
             password_list.append(chr(random.choice(symbol_list+number_list+upper_list+lower_list)))
-
         elif input_message == "medium":
             password_list.append(chr(random.choice(number_list+upper_list+lower_list)))
-
         elif input_message == "weak":
             password_list.append(chr(random.choice(lower_list)))
 
